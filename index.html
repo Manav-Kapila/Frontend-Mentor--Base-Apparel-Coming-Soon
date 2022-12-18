@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <!-- STYLESHEET LINK -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="mainBody">
+    <main class="mainSection">
+        <article class="leftSide">
+            <!-- LOGO -->
+            <figure class="brandLogo">
+                <img src="images/logo.svg" alt="Brand Logo" class="logoImg">
+            </figure>
+            <figure class="mobileImage">
+                <!-- HERO IMAGE -->
+                <img src="images/hero-mobile.jpg" alt="Brand Model Image" class="heroImageMobile" width="375px" height="450px">
+            </figure>
+            <!-- HERO HEADING -->
+            <h1 class="heroHeading"><span class="lightHeading">We're</span><br> coming<br> soon</h1>
+            <!-- HERO DESCRIPTION -->
+            <p class="heroDescription">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+            <!-- EMAIL  BOX -->
+            <form action="#" class="emailSection">
+                <input type="email" id="email" name="email" placeholder="Email Address" class="emailBox">
+                <div class="errorContainer"><img src="images/icon-error.svg" alt="Invalid Email Error Icon" class="errorIcon"></div>
+                <input type="submit" class="submitBtn" value="" onclick="checkEmail()">
+            </form>
+            <div class="errorText">Please provide a valid email</div>
+            <footer>
+                <p class="attribution">
+                    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://www.linkedin.com/in/manavkapila/">Manav Kapila</a>.
+                </p>
+            </footer>
+        </article>
+        <figure class="rightSide">
+            <!-- HERO IMAGE -->
+            <img src="images/hero-desktop.jpg" alt="Brand Model Image" class="heroImage heroImageDesktop" width="610px" height="800px">
+        </figure>
+
+    </main>
+    <script>
+        const email = document.querySelector("#email");
+        const error_icon = document.querySelector(".errorIcon");
+        const error_text = document.querySelector(".errorText");
+
+        let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        function checkEmail() {
+            if (email.value.match(regExp)) {
+
+                error_icon.style.visibility = "hidden";
+                error_text.style.visibility = "hidden";
+            } else {
+                error_icon.style.visibility = "initial";
+                error_text.style.visibility = "initial";
+            }
+            if (email.value == "") {
+                error_icon.style.visibility = "hidden";
+                error_text.style.visibility = "initial";
+            }
+        }
+    </script>
+</body>
+
+</html>
